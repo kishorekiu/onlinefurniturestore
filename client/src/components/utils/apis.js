@@ -4,7 +4,7 @@ import axios from "axios";
 export const userRegistration = async (userObj) => {
   try {
     const response = await axios
-      .post("/user/register", userObj)
+      .post("https://onlinefurniturestore-server.vercel.app/user/register", userObj)
       .then((res) => res.data);
     return response;
   } catch (err) {
@@ -16,7 +16,7 @@ export const userLogin = createAsyncThunk(
   "userlogin",
   async (userObj, thunkApi) => {
     try {
-      let response = await axios.post("/user/login", userObj);
+      let response = await axios.post("https://onlinefurniturestore-server.vercel.app/user/login", userObj);
       let data = response.data;
       if (data.message === "success") {
         return data.userObj;
@@ -37,7 +37,7 @@ export const addItemToCart = createAsyncThunk(
   "additemtocart",
   async (data, thunkApi) => {
     const response = await axios
-      .post("/cart/additemtocart", data)
+      .post("https://onlinefurniturestore-server.vercel.app/cart/additemtocart", data)
       .then((res) => res.data);
     if (response.message === "success") {
       return response;
@@ -52,7 +52,7 @@ export const removeItemFromCart = createAsyncThunk(
   "removeitemfromcart",
   async (data) => {
     const response = await axios
-      .post("/cart/removeitemfromcart", data)
+      .post("https://onlinefurniturestore-server.vercel.app/cart/removeitemfromcart", data)
       .then((res) => res.data);
     if (response.message === "success") {
       return response;
@@ -64,7 +64,7 @@ export const IncrementItemQuantity = createAsyncThunk(
   "incrementitemquantity",
   async (data) => {
     const response = await axios
-      .post("/cart/incrementitemquantity", data)
+      .post("https://onlinefurniturestore-server.vercel.app/cart/incrementitemquantity", data)
       .then((res) => res.data);
     if (response.message === "success") {
       return response;
@@ -76,7 +76,7 @@ export const decrementItemQuantity = createAsyncThunk(
   "decrementitemquantity",
   async (data) => {
     const response = await axios
-      .post("/cart/decrementitemquantity", data)
+      .post("https://onlinefurniturestore-server.vercel.app/cart/decrementitemquantity", data)
       .then((res) => res.data);
     if (response.message === "success") {
       return response;
@@ -89,7 +89,7 @@ export const addItemToFavourite = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios
-        .post("/favourite/additemtofavourite", data)
+        .post("https://onlinefurniturestore-server.vercel.app/favourite/additemtofavourite", data)
         .then((res) => res.data);
       if (response.message === "success") {
         return response;
@@ -105,7 +105,7 @@ export const removeItemFromFavourite = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios
-        .post("/favourite/removeitemfromfavourite", data)
+        .post("https://onlinefurniturestore-server.vercel.app/favourite/removeitemfromfavourite", data)
         .then((res) => res.data);
       if (response.message === "success") {
         return response;
@@ -121,7 +121,7 @@ export const addBillingDetails = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios
-        .post("/user/addbillingdetails", data)
+        .post("https://onlinefurniturestore-server.vercel.app/user/addbillingdetails", data)
         .then((res) => res.data);
       // if (response.message === "success") {
       // }
@@ -137,7 +137,7 @@ export const removeBillingDetails = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios
-        .post("/user/removebillingdetails", data)
+        .post("https://onlinefurniturestore-server.vercel.app/user/removebillingdetails", data)
         .then((res) => res.data);
       if (response.message === "success") {
         return response;
@@ -151,7 +151,7 @@ export const removeBillingDetails = createAsyncThunk(
 export const onPlaceOrder = createAsyncThunk("onplaceorder", async (data) => {
   try {
     const response = await axios
-      .post("/user/placeorder", data)
+      .post("https://onlinefurniturestore-server.vercel.app/user/placeorder", data)
       .then((res) => res.data);
     if (response.message === "success") {
       return response;
@@ -164,7 +164,7 @@ export const onPlaceOrder = createAsyncThunk("onplaceorder", async (data) => {
 export const onClearCart = createAsyncThunk("onclearcart", async (data) => {
   try {
     const response = await axios
-      .post("/user/clearcart", data)
+      .post("https://onlinefurniturestore-server.vercel.app/user/clearcart", data)
       .then((res) => res.data);
     if (response.message === "success") {
       return response;
