@@ -3,7 +3,9 @@ const path = require("path");
 const mongoClient = require("mongodb").MongoClient;
 const app = express();
 
-app.use(express.static(path.join(__dirname, "../client/build")));
+// app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static("https://onlinefurniturestore.vercel.app");
+
 
 const DB_URL =
   "mongodb+srv://kishorekrissh7:kishorekrissh7@cluster0.slyeo.mongodb.net/?retryWrites=true&w=majority";
