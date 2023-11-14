@@ -832,7 +832,7 @@ const App = () => {
     const getProducts = async () => {
       try {
         const response = await axios
-          .get("/products")
+          .get("https://onlinefurniturestore-server.vercel.app/products")
           .then((res) => res.data)
           .catch((err) => console.log("error", err));
         if (response.message) {
