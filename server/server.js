@@ -10,7 +10,7 @@ app.use(express.static("https://onlinefurniturestore.vercel.app");
 const DB_URL =
   "mongodb+srv://kishorekrissh7:kishorekrissh7@cluster0.slyeo.mongodb.net/?retryWrites=true&w=majority";
 
-//   "mongodb+srv://kishorekrissh7:kishorekrissh7@cluster0.slyeo.mongodb.net/?retryWrites=true&w=majority";
+//   "mongodb+srv://kishorekrissh7:<mypassword>@cluster0.slyeo.mongodb.net/?retryWrites=true&w=majority";
 
 mongoClient
   .connect(DB_URL)
